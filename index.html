@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SITE HORA</title>
+</head>
+<body onload="muda()">
+    <header id="cabeçalho"> 
+       <h1>HORA DIA</h1>
+    </header>
+    <main id="principal">
+      <section id="principal-hora">horario aqui</section>
+      <section id="secao-imagem" >
+      <img id="imagem" src="img/tarde.jpg" alt="dia">
+    </section>
+    </main>
+    <footer id="rodape">
+        &#169; SELETOR DE HORAS
+    </footer>
+    <script>  
+        function muda() {
+        let img = document.querySelector('#imagem')
+        let h = 20;
+        let hora = document.querySelector('#principal-hora')
+        hora.innerHTML = `Agora são ${h} horas`;
+        if(h >= 0 && h <= 12){
+         img.src="img/dia.jpg";
+         let panofundo = document.getElementById('principal')
+         panofundo.style.backgroundColor = '#00BFFF';
+         panofundo.style.color = '#00008B';
+        } else if(h >= 13 && h <= 18 ) {
+           img.src="img/tarde.jpg";
+           let panofundo = document.getElementById('principal');
+           panofundo.style.backgroundColor = '#F4A460';
+           panofundo.style.color = '#8B4513';
+        } else {
+           img.src="img/noite.jpg";
+           let panofundo = document.getElementById('principal');
+           panofundo.style.backgroundColor = '#696969';
+           panofundo.style.color = '#DCDCDC';
+        }
+     }
+    </script>
+</body>
+</html>
